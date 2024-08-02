@@ -1,4 +1,4 @@
-# baseURL = "https://mikirov.github.io/portfolio"
+# baseURL = "https://mikirov.github.io/portfolio/"
 baseURL = ""
 title = "Mihail's Portfolio"
 theme = "gokarna"
