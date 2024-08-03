@@ -7,7 +7,7 @@ type: page
 ### My notable projects  are:
 
 1. [Assassin's Creed: Valhalla](/projects/valhalla)
-
-<!-- 1. [Tatooine](/projects/tatooine/)
-2. [Hydra](/projects/hydra/)
-3. [Bludhaven](/projects/bludhaven/) -->
+2. [Filecoin IPC actors](/projects/ipc_actors)
+3. [Orchid suites](/projects/orchid-suites)
+<!-- 4. [Astra Protocol](/projects/astra)
+5. [Polkadot Conformance Tests](/projects/polkadot) -->

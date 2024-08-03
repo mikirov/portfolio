@@ -41,11 +41,6 @@ pygmentsStyle = "monokai"
   socialIcons = [
     {name = "twitter", url = "https://x.com/mihail_kirov"},
     {name = "linkedin", url = "https://www.linkedin.com/in/mihail-kirov/"},
-    # {name = "linkedin", url = "https://www.linkedin.com/in/mihail-kirov/"},
-    # {name = "stackoverflow", url = "https://example.com"},
-    # {name = "dribbble", url = "https://example.com"},
-    # {name = "instagram", url = "https://www.instagram.com/shimonimium/"},
-    # {name = "twitch", url = "https://example.com"},
     {name = "email", url = "mailto:shimonchik@gmail.com"}
   ]
   metaKeywords = ["blog", "mikirov", "Mihail Kirov"]
@@ -68,12 +63,6 @@ pygmentsStyle = "monokai"
     pre = "<span data-feather='code'></span>"
     url = "/projects/"
     weight = 3
-
-  [[menu.main]]
-    name = "Tags"
-    pre = "<span data-feather='tag'></span>"
-    url = "/tags/"
-    weight = 4
 
   [[menu.main]]
     identifier = "github"

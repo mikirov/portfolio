@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>EVM on Mihail&#39;s Portfolio</title>
+    <link>https://mikirov.xyz/tags/evm/</link>
+    <description>Recent content in EVM on Mihail&#39;s Portfolio</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="https://mikirov.xyz/tags/evm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Astra Protocol</title>
+      <link>https://mikirov.xyz/projects/astra/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mikirov.xyz/projects/astra/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Filecoin IPC actors</title>
+      <link>https://mikirov.xyz/projects/ipc_actors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mikirov.xyz/projects/ipc_actors/</guid>
+      <description>This project aimed to migrate Filecoin actors to EVM contracts. The live repository can be found here&#xA;I personally worked on: Developing production-ready code using Solidity Unit testing the actors using foundry Optimizing code for on-chain gas efficiency </description>
+    </item>
+  </channel>
+</rss>
