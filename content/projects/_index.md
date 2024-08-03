@@ -1,6 +1,5 @@
 ---
 title: "Projects"
-image: "/images/valhalla.jpeg"
 type: page
 ---
 

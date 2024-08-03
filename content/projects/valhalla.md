@@ -1,6 +1,6 @@
 ---
 title: Ubisoft's Assassins Creed Valhalla DLC
-image: images/valhalla.jpeg
+image: "/images/valhalla.jpeg"
 type: page
 ---
 
