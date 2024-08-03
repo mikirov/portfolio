@@ -1,5 +1,5 @@
 # baseURL = "https://mikirov.github.io/portfolio/"
-baseURL = ""
+baseURL = "https://mikirov.xyz/"
 title = "Mihail's Portfolio"
 theme = "gokarna"
 languageCode = "en"
@@ -12,7 +12,7 @@ publishDir = "docs"
 pygmentsStyle = "monokai"
 
 [params]
-  footer = "The Marauders"
+  footer = "Esscrypt"
   description = "Welcome to my portfolio"
   avatarURL = "/images/avatar.webp"
   AvatarAltText = "avatar"
@@ -41,13 +41,14 @@ pygmentsStyle = "monokai"
   socialIcons = [
     {name = "twitter", url = "https://x.com/mihail_kirov"},
     {name = "linkedin", url = "https://www.linkedin.com/in/mihail-kirov/"},
+    # {name = "linkedin", url = "https://www.linkedin.com/in/mihail-kirov/"},
     # {name = "stackoverflow", url = "https://example.com"},
     # {name = "dribbble", url = "https://example.com"},
-    {name = "instagram", url = "https://www.instagram.com/shimonimium/"},
+    # {name = "instagram", url = "https://www.instagram.com/shimonimium/"},
     # {name = "twitch", url = "https://example.com"},
     {name = "email", url = "mailto:shimonchik@gmail.com"}
   ]
-  metaKeywords = ["blog", "gokarna", "hugo"]
+  metaKeywords = ["blog", "mikirov", "Mihail Kirov"]
 
 [menu]
   [[menu.main]]
@@ -83,7 +84,7 @@ pygmentsStyle = "monokai"
   [[menu.main]]
     identifier = "buymeacoffee"
     pre = "<span data-feather='coffee'></span>"
-    url = "https://www.buymeacoffee.com/avijitgupta"
+    url = "https://buymeacoffee.com/shimonchicn"
     weight = 6
 
   [[menu.main]]

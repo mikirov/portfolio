@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>EIP7503 Private transfers</title>
+    <meta name="description" content="Ethereum Proposal for implementation of plausibly deniable transfers">
+    <meta name="keywords" content='blog, mikirov, Mihail Kirov, ethereum'>
+
+    <meta property="og:url" content="https://example.com/posts/eip-7503-private-transfers/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="EIP7503 Private transfers">
+    <meta property="og:description" content="Ethereum Proposal for implementation of plausibly deniable transfers">
+    <meta property="og:image" content="https://example.com/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="https://example.com/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="EIP7503 Private transfers">
+    <meta name="twitter:description" content="Ethereum Proposal for implementation of plausibly deniable transfers">
+    <meta property="twitter:domain" content="https://example.com/posts/eip-7503-private-transfers/">
+    <meta property="twitter:url" content="https://example.com/posts/eip-7503-private-transfers/">
+    <meta name="twitter:image" content="https://example.com/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://example.com/posts/eip-7503-private-transfers/">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.9a920d7dabdbad8363b6a0a94e29a9dfebdb7ee64cfcb193a0145e512ef2bdab.js" integrity="sha256-mpINfavbrYNjtqCpTimp3&#43;vbfuZM/LGToBReUS7yvas="></script>
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+      });
+    </script>
+  
+    
+</head>
+<body>
+        <script>
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="https://example.com/">
+                <img src='/images/avatar.webp' alt="avatar">
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://example.com/">Mihail&#39;s Portfolio</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://example.com/"><span data-feather='home'></span> Home </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://example.com/posts/"><span data-feather='book'></span> Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://example.com/projects/"><span data-feather='code'></span> Projects </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://example.com/tags/"><span data-feather='tag'></span> Tags </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/mikirov"><span data-feather='github'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://buymeacoffee.com/shimonchicn"><span data-feather='coffee'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://example.com/index.xml"><span data-feather='rss'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span class="sr-only dark-theme-toggle-screen-reader-target"></span>
+                <a>
+                    <span class="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://example.com/"><span data-feather='home'></span> Home </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://example.com/posts/"><span data-feather='book'></span> Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://example.com/projects/"><span data-feather='code'></span> Projects </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://example.com/tags/"><span data-feather='tag'></span> Tags </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/mikirov"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://buymeacoffee.com/shimonchicn"><span data-feather='coffee'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://example.com/index.xml"><span data-feather='rss'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                    <a>
+                        <span class="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>EIP7503 Private transfers</h1>
+        <small role="doc-subtitle">Ethereum Proposal for implementation of plausibly deniable transfers</small>
+        <p class="post-date">February 13, 2024
+        
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://example.com/tags/ethereum">ethereum</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <h1 id="introduction">Introduction</h1>
+<p>The need for privacy in digital transactions is paramount in today’s digital age, yet most blockchain technologies fall short in offering complete anonymity. Current methods like mixers are often vulnerable to external threats and regulatory scrutiny. Our proposal addresses these challenges by providing a secure, decentralized solution, ensuring privacy for stakeholders including individual users and organizations requiring confidential transactions.</p>
+<p>This document introduces a solution for achieving private transfers using a burn/mint Zero-Knowledge Proof (ZKP) mechanism, addressing the limitations of cryptocurrency mixers like TornadoCash. These mixers, while effective in obscuring Ethereum transactions, face potential government bans due to their traceable interactions. To enhance privacy protection for both senders and receivers, we propose a mechanism that maintains sender anonymity through plausible deniability.</p>
+<p>The successful implementation of this proposal will significantly enhance privacy in blockchain transactions. This innovation addresses a critical problem in the digital asset space - the lack of true anonymity. By safeguarding transaction details and user identities, our solution will benefit the community by fostering a more secure and private blockchain environment, encouraging broader adoption and trust in blockchain technology.</p>
+<p><img src="/images/private-transfers.jpeg" alt="architecture"></p>
+<h1 id="example-user-flow">Example User Flow</h1>
+<ol>
+<li>User has 100 tokens, he has to pay a small amount each time he makes a transfer for network fees.</li>
+<li>User’s account 1 sends 1 token to 99 intermediary addresses (Nullifiers), effectively burning the token and the remainder to his account 2, to fund the account for later network fees.</li>
+<li>User generates Proof of knowledge on how the Nullifiers were generated (ZKP)</li>
+<li>User’s  account 2 submits hashes of Nullifier addresses, ZKP, recipient and ZKP public inputs to an on-chain verifier.</li>
+<li>Verifier validates ZKP, invalidates Nullifier hashes and mints tokens to the recipient</li>
+</ol>
+<h1 id="requirements-for-the-protocol">Requirements for the protocol</h1>
+<p>To meet the stipulated requirements for ensuring privacy and security within the protocol, the following design principles must be adhered to:</p>
+<ol>
+<li><strong>Proof of Knowledge Without Key Disclosure:</strong> The protocol must enable users to generate and submit proof of their knowledge of the private key corresponding to an intermediary address, without actually disclosing the private key itself. This can be achieved through the use of Zero-Knowledge Proofs (ZKPs), specifically designed to verify the possession of a secret (the private key and nonce) without revealing the secret itself.</li>
+<li><strong>Privacy of Key and Nonce:</strong> The protocol must ensure that only the user knows their private key and the nonce used for Nullifier generation. This confidentiality is crucial for maintaining the security of the Nullifier and ensuring that no other party can replicate or misuse it.</li>
+<li><strong>Intermediary Addresses Concealment:</strong> To prevent the possibility of transaction tracing back to its origin, intermediary addresses must never be revealed on-chain by the protocol. This can be facilitated through the use of hashed representations of these addresses during transactions or in any on-chain data structures.</li>
+<li><strong>Sender concealment</strong>: In order to ensure privacy, the protocol must not disclose the sender address on-chain. This requires private transfers’s phases to be a initiated from 2 separate accounts so it’s infeasible to backtrack based on the mint transaction’s initiator.</li>
+<li><strong>Standardized</strong> <strong>Constant Transaction Amount:</strong> The amount transferred to intermediary addresses must be constant across all transactions within the protocol. By eliminating variations in transaction amounts, the protocol further reduces the risk of transactions being linked to specific users or recipients based on the value transferred. Additionally, the constant amount ensures that the verifier does not need to know the specific value being transacted, thereby enhancing privacy and making it harder for external parties to correlate transactions with their participants. Transactions to intermediary addresses should involve a standardized transfer amount that is sufficiently generic to avoid detection through analysis of transaction volumes. This standardization helps in obfuscating the flow of funds, making it difficult for third parties to identify specific transactions based on the amount transferred.</li>
+<li><strong>OFAC compliance:</strong> The rollup that uses the protocol can opt-in to allow the service to be used only by addresses that have not been restricted, ensuring legal compliance.</li>
+</ol>
+<h1 id="spendable-and-unspendable-address-nullifier">Spendable and Unspendable Address (Nullifier)</h1>
+<p>An account&rsquo;s balance on the Ethereum Virtual Machine (EVM) is considered <strong>spendable</strong> if it meets one of the following conditions:</p>
+<ol>
+<li>There is a known private key <strong><code>s</code></strong>, where the account address <strong><code>A</code></strong> is derived as the last 20 bytes of the keccak hash of the public key. The public key itself is calculated by multiplying a secret scalar <strong><code>s</code></strong> with the generator point <strong>G</strong> (s x G) in Elliptic Curve cryptography.</li>
+<li>The account is associated with a smart contract <strong><code>c</code></strong>, where <strong><code>A</code></strong> is derived as the last 20 bytes of the keccak hash of the contract&rsquo;s parameters.</li>
+</ol>
+<p>Accounts that do not fulfill either condition are deemed <strong>unspendable</strong> and are referred to as <strong>Nullifiers</strong> in this document.</p>
+<p>It&rsquo;s presumed that for a Nullifier generated using a private key <strong><code>s</code></strong> we create, no other party can access its balance. This is due to the EVM&rsquo;s design, which supports a vast number of potential addresses (2^256).</p>
+<h1 id="generating-a-nullifier">Generating a Nullifier</h1>
+<p>To create a Nullifier, we generate a random address using a known private key <strong><code>s</code></strong> and demonstrate control over its creation process. Employing a hash function different from EVM&rsquo;s native <strong><code>keccak</code></strong>, such as <strong>poseidon</strong>, gives us ZK-friendliness and a source of randomness, assuming it&rsquo;s computationally infeasible to find two inputs that produce the same hash across different hash functions. This method, combined with Zero-Knowledge Proofs (ZKPs), allows us to validate the existence of an Ethereum account holding ETH in the <strong><code>stateRoot</code></strong> without revealing the value of <strong><code>s</code></strong>.</p>
+<p>A Nullifier is generated by hashing the concatenation of the secret key <strong><code>s</code></strong> and a nonce using the <strong>poseidon</strong> hash function. The resulting <strong><code>nullifierAddress</code></strong> is confirmed to be a non-existent account on-chain.</p>
+<h1 id="verifying-non-existence-of-a-nullifier-on-chain"><strong>Verifying Non-Existence of a Nullifier On-Chain</strong></h1>
+<p>To verify that an address is <strong>unspendable</strong>, we check if it has already been recorded on-chain using <a href="https://www.quicknode.com/docs/ethereum/eth_getAccount">eth_getAccount</a> and checking the nonce, code hash, balance and storage. If the account is empty, it confirms the address&rsquo;s non-existence and thus its status as <strong>unspendable</strong>. This verification is essential before sending funds to a Nullifier.</p>
+<h1 id="sending-funds-to-a-nullifier">Sending Funds to a Nullifier</h1>
+<p>Transactions sent to a Nullifier are recorded on-chain, rendering the ETH effectively burnt since the address is <strong>unspendable</strong>. Only the creator of the <strong>Nullifier</strong> can assert its status. Through ZKP, we can substantiate our knowledge of the Nullifier&rsquo;s creation, facilitating the minting of associated amounts to a new, untraceable address.</p>
+<h1 id="nullifier-address-generation-service"><strong>Nullifier Address Generation Service</strong></h1>
+<p>An off-chain service will be developed to facilitate the generation of Nullifier addresses, verification their non-existence on-chain, execution of burn transactions, and initiation of the proof generation and minting processes.</p>
+<h1 id="erc20-vs-native-token-for-the-protocol">ERC20 vs native token for the protocol</h1>
+<p>The protocol can operate with either an ERC20 token or a network’s native token. Using an ERC20 token simplifies implementation but centralizes control to a single smart contract, potentially subject to regulatory pressures. A native token implementation requires more extensive modifications but enhances privacy and direct minting capabilities.</p>
+<h1 id="zk-circuit-design"><strong>ZK Circuit Design</strong></h1>
+<p>The circuit needs to have the following public inputs. <em>The verifier (think smart contract) will get these and provide it as input to the verification circuit.</em></p>
+<ul>
+<li><code>blockhash</code> - It allows the circuit to reason about the validity of the block header and the underlying <code>stateRoot</code></li>
+<li><code>nullifierAddressHash[]</code> - a list of <strong>hashes</strong> of Nullfier addresses.</li>
+<li><code>blacklistHash</code> - hash a list of blacklisted addresses, maintained by legal parties.</li>
+<li><code>receiver</code> - address of the target receiver. Checked against the <code>blacklist</code> for compliance</li>
+</ul>
+<p>The <strong>private inputs</strong> of the circuit will include the above constituents in their raw form. In addition the following inputs will be passed:</p>
+<ul>
+<li><code>nullifierAddress[]</code> - a list of raw <strong>Nullifier</strong> addresses.</li>
+<li><code>rlpHead</code> - All the <code>blockhash</code> constituents up to the stateRoot in their RLP encoded form. It should also include the prefix indicating that the complete concatenated RLP encoded block header size when <code>rlpHead</code>, <code>stateRoot</code> and <code>rlpTail</code> are concatenated.</li>
+<li><code>stateRoot</code> - state tree root of the chain in this block. Should be 32 bytes.</li>
+<li><code>rlpTail</code> - All the <code>blockhash</code> constituents after the stateRoot in their RLP encoded form.</li>
+<li><code>storageRoot</code> - The storage tree root for this account.</li>
+<li><code>eip1186Proofs</code>- <a href="https://eips.ethereum.org/EIPS/eip-1186">EIP1186</a> objects, containing an array of nodes of the MPT proving the <code>nullifierAddress</code> exists in this state tree and its  root is <code>stateRoot</code>. <code>storageProof</code> is not checked against and can be omitted. Balance needs to be positive.</li>
+<li><code>s</code> - private key of the wallet that generated the <strong>unspendable</strong> nullifier addresses</li>
+<li><code>nonce_start</code> - start index of the auto increment keys for the nullifier address generation</li>
+<li><code>nonce_end</code> - end index of the auto increment keys for the nullifier address generation</li>
+<li><code>blacklist[]</code> - list of blacklisted addresses to be checked against. Supplied by legal parties</li>
+<li><code>sender</code> - address of the initial transaction sender.</li>
+</ul>
+<p>The circuit has to prove for each <code>nullifierAddress</code> the following things:</p>
+<ol>
+<li><code>nullifierAddress = h(s | nonce)</code>, where <code>s</code> and <code>nonce</code> are supplied as private inputs. <code>h</code> is the poseidon hash</li>
+<li><code>nullifierAddressHash = h(nullifierAddress | nonce)</code> , where <code>nullifierAddress</code> is a private input, <code>nonce</code> is derived from the private input <code>nonce_start</code> and <code>nullifierAddressHash</code> is a public input.</li>
+<li><code>nullifierAddress</code> exists in the <code>stateRoot</code> as of block identified by <code>blockHash</code> and corresponds to an account with positive balance. Requires a valid block header to be supplied as private input. The 3 private input constituents  <code>keccak256</code>  hashed together must equal the <code>blockHash</code></li>
+</ol>
+<p>Additionally, the circuit needs to ensure <code>blacklistHash = h(blacklist[])</code> as well as validate <code>sender</code> and <code>receiver</code> are not part of the <code>blacklist[]</code>.</p>
+<h1 id="on-chain-verification"><strong>On-chain Verification</strong></h1>
+<p>The On-chain Verification process involves a specialized Solidity smart contract, referred to as <strong><code>EIP7503Verifier</code></strong>, designed to validate zero-knowledge proofs (ZKPs) and ensure the integrity of transactions related to Nullifiers. Here&rsquo;s an explanation of its operation:</p>
+<ol>
+<li><strong>Receiving and Validating Proofs</strong>: The <strong><code>EIP7503Verifier</code></strong> contract initiates its process by receiving a submission that includes a ZKP (<strong><code>proof</code></strong>), the hash of a block (<strong><code>blockHash</code></strong>), an array of hashed Nullifier addresses (<strong><code>nullifierAddressHash[]</code></strong>), a hash of the list of blacklisted addresses by regulators (<code>**blacklistHash**</code>) and a recipient address (<strong><code>receiver</code></strong>). The contract first validates the <strong><code>blockHash</code></strong> against the last 256 block hashes stored by the Ethereum Virtual Machine (EVM). This step confirms that the proof pertains to a recent state of the blockchain, ensuring its relevance and timeliness. The assumption is that this time frame is adequate for generating and submitting proofs. Future enhancements may include integrating a trusted oracle to access a broader range of historical block hashes, further strengthening the verification process.</li>
+<li><strong>Invalidating Used Nullifiers</strong>: Upon successful proof verification, the contract marks the <strong><code>nullifierAddressHash</code></strong> as used by recording it in an internal mapping. This critical step prevents the reuse of Nullifiers, addressing potential issues like double spending or double minting, which could undermine the token&rsquo;s integrity. By storing only the hash of the Nullifier address rather than the address itself, the system enhances privacy and security, making it more challenging to trace transactions back to their original Nullifiers.</li>
+<li><strong>Minting Tokens</strong>: After verification, the <strong><code>EIP7503Verifier</code></strong> contract mints a predefined amount of ERC20 tokens and transfers them to the specified receiver address. This action completes the process, allowing the Nullifier to be converted into a tangible asset on the blockchain while maintaining the anonymity of the original transactions. The choice to use ERC20 tokens provides flexibility and compatibility with a wide range of wallets and other smart contracts.</li>
+</ol>
+<p><strong>Additional Considerations</strong>:</p>
+<ul>
+<li><strong>Accessibility and Security</strong>: The design philosophy behind the <strong><code>EIP7503Verifier</code></strong> ensures that any account can initiate a mint transaction following successful proof verification. This inclusivity fosters a decentralized and user-friendly environment. The absence of ownership modifiers in the protocol design eliminates centralized control points, which could be targeted for censorship or blacklisting, thereby enhancing the protocol&rsquo;s resistance to external pressures.</li>
+<li><strong>Quality Assurance</strong>: &gt; 95% test coverage. This level of testing is crucial for verifying the contract&rsquo;s functionality across all possible scenarios, ensuring that the contract behaves as expected under various conditions and effectively mitigates risks associated with smart contract vulnerabilities.</li>
+</ul>
+<h1 id="node-enhancements"><strong>Node Enhancements</strong></h1>
+<p>To enable a rollup to mint new native tokens, it is imperative to upgrade the Node with a new transaction type that receives the ZKP and public input constituents. The upgraded Node will validate the proof and the public input constituents, ensuring they don’t collide with the expended (partially or fully) nullifiers. Afterwards it will do accounting necessary to prevent double mint. This enhancement is not only pivotal but also a prerequisite for the successful implementation of Phase 2 of our proposal. By facilitating the minting process of the native token, this modification represents a significant stride in advancing the network&rsquo;s privacy.</p>
+
+        
+    </div>
+
+    <div class="prev-next">
+        
+    </div>
+
+    
+    
+    <svg id="btt-button" class="arrow-logo" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512" onclick="scrollToTop()" title="Go to top">
+        
+        <path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/>
+    </svg>
+    <script>
+        let backToTopButton = document.getElementById("btt-button");
+
+        window.onscroll = function() {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        }
+
+        function scrollToTop() {
+            window.scrollTo(0, 0);
+        }
+    </script>
+    
+    
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#example-user-flow">Example User Flow</a></li>
+    <li><a href="#requirements-for-the-protocol">Requirements for the protocol</a></li>
+    <li><a href="#spendable-and-unspendable-address-nullifier">Spendable and Unspendable Address (Nullifier)</a></li>
+    <li><a href="#generating-a-nullifier">Generating a Nullifier</a></li>
+    <li><a href="#verifying-non-existence-of-a-nullifier-on-chain"><strong>Verifying Non-Existence of a Nullifier On-Chain</strong></a></li>
+    <li><a href="#sending-funds-to-a-nullifier">Sending Funds to a Nullifier</a></li>
+    <li><a href="#nullifier-address-generation-service"><strong>Nullifier Address Generation Service</strong></a></li>
+    <li><a href="#erc20-vs-native-token-for-the-protocol">ERC20 vs native token for the protocol</a></li>
+    <li><a href="#zk-circuit-design"><strong>ZK Circuit Design</strong></a></li>
+    <li><a href="#on-chain-verification"><strong>On-chain Verification</strong></a></li>
+    <li><a href="#node-enhancements"><strong>Node Enhancements</strong></a></li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 Esscrypt</span>
+    
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>
