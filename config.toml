@@ -41,7 +41,7 @@ pygmentsStyle = "monokai"
   socialIcons = [
     {name = "twitter", url = "https://x.com/mihail_kirov"},
     {name = "linkedin", url = "https://www.linkedin.com/in/mihail-kirov/"},
-    {name = "email", url = "mailto:shimonchik@gmail.com"}
+    {name = "email", url = "mailto:me@mikirov.xyz"}
   ]
   metaKeywords = ["blog", "mikirov", "Mihail Kirov"]
 
