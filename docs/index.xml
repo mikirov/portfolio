@@ -30,13 +30,6 @@
       <description>Introduction The need for privacy in digital transactions is paramount in today’s digital age, yet most blockchain technologies fall short in offering complete anonymity. Current methods like mixers are often vulnerable to external threats and regulatory scrutiny. Our proposal addresses these challenges by providing a secure, decentralized solution, ensuring privacy for stakeholders including individual users and organizations requiring confidential transactions.&#xA;This document introduces a solution for achieving private transfers using a burn/mint Zero-Knowledge Proof (ZKP) mechanism, addressing the limitations of cryptocurrency mixers like TornadoCash.</description>
     </item>
     <item>
-      <title></title>
-      <link>http://localhost:1313/projects/polkadot/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/polkadot/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Astra Protocol</title>
       <link>http://localhost:1313/projects/astra/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -49,6 +42,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/ipc_actors/</guid>
       <description>This project aimed to migrate Filecoin actors to EVM contracts. The live repository can be found here&#xA;I personally worked on: Developing production-ready code using Solidity Unit testing the actors using foundry Optimizing code for on-chain gas efficiency </description>
+    </item>
+    <item>
+      <title>Histori - Historical Blockchain Data</title>
+      <link>http://localhost:1313/projects/histori/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/histori/</guid>
+      <description>Histori - Historical Blockchain Data Problem: The Challenge of Accessing Historical Blockchain Data In the rapidly evolving world of blockchain, developers and businesses alike face a significant challenge: accessing reliable, affordable, and scalable blockchain data, particularly historical data. As blockchain technology becomes more integral to decentralized systems and applications, this data is crucial for various use cases such as token balance tracking, portfolio management, compliance, and auditing.&#xA;Key Pain Points: Running Costly Archival Nodes: To access historical blockchain data, one common solution is to run a fully-synced archival node, which requires terabytes of storage (4-12 TB depending on the network) and takes multiple days or weeks to synchronize.</description>
     </item>
     <item>
       <title>Orchid Suites</title>
