@@ -1,3 +1,6 @@
 [submodule "themes/gokarna"]
 	path = themes/gokarna
 	url = https://github.com/526avijitgupta/gokarna.git
+[submodule "lib/forge-std"]
+	path = lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
