@@ -6,7 +6,7 @@ languageCode = "en"
 defaultContentLanguage = "en"
 enableEmoji = true
 enableRobotsTXT = true
-publishDir = "docs"
+publishDir = "public"
 
 # Choose one of emacs, trac or perldoc
 pygmentsStyle = "monokai"
