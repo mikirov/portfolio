@@ -2,39 +2,39 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/ethereum/</loc>
+    <loc>https://mikirov.xyz/tags/ethereum/</loc>
     <lastmod>2024-07-15T23:39:49+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://mikirov.xyz/</loc>
     <lastmod>2024-07-15T23:39:49+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://mikirov.xyz/posts/</loc>
     <lastmod>2024-07-15T23:39:49+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/decentralized-prover-market/</loc>
+    <loc>https://mikirov.xyz/posts/decentralized-prover-market/</loc>
     <lastmod>2024-07-15T23:39:49+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://mikirov.xyz/tags/</loc>
     <lastmod>2024-07-15T23:39:49+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/point-precompile/</loc>
+    <loc>https://mikirov.xyz/posts/point-precompile/</loc>
     <lastmod>2024-03-18T23:39:49+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/eip-7503-private-transfers/</loc>
+    <loc>https://mikirov.xyz/posts/eip-7503-private-transfers/</loc>
     <lastmod>2024-02-13T23:39:49+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/astra/</loc>
+    <loc>https://mikirov.xyz/projects/astra/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://mikirov.xyz/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/projects/ipc_actors/</loc>
+    <loc>https://mikirov.xyz/projects/ipc_actors/</loc>
   </url><url>
-    <loc>http://localhost:1313/projects/histori/</loc>
+    <loc>https://mikirov.xyz/projects/histori/</loc>
   </url><url>
-    <loc>http://localhost:1313/projects/orchid-suites/</loc>
+    <loc>https://mikirov.xyz/projects/orchid-suites/</loc>
   </url><url>
-    <loc>http://localhost:1313/projects/</loc>
+    <loc>https://mikirov.xyz/projects/</loc>
   </url><url>
-    <loc>http://localhost:1313/projects/valhalla/</loc>
+    <loc>https://mikirov.xyz/projects/valhalla/</loc>
   </url>
 </urlset>
