@@ -1,70 +1,39 @@
----
-title: Histori - Historical Blockchain Data
-type: page
----
+# Histori
 
-# Histori - Historical Blockchain Data
+Histori is a pioneering tech startup focused on providing seamless access to historical blockchain data across multiple networks. The platform was designed to simplify blockchain data retrieval through a robust REST API and an intuitive SDK, both of which empower developers and organizations to access and analyze historical blockchain insights with minimal effort. By abstracting the complexity of managing and querying historical blockchain data, Histori allows users to focus on leveraging data to drive insights, decisions, and innovations without needing to build or maintain their own blockchain infrastructure.
 
-## **Problem: The Challenge of Accessing Historical Blockchain Data**
+Histori's services are accessible through our main website at [histori.xyz](https://histori.xyz), with extensive developer documentation provided at [docs.histori.xyz](https://docs.histori.xyz) to support users at all levels. For high-demand users and enterprise solutions, we offer enhanced features enabling integration through a dedicated node interface at [node.histori.xyz](https://node.histori.xyz). This setup facilitates efficient interaction with Ethereum RPC nodes and additional supported networks, ensuring that Histori is both versatile and scalable to meet diverse user needs.
 
-In the rapidly evolving world of blockchain, developers and businesses alike face a significant challenge: accessing **reliable**, **affordable**, and **scalable** blockchain data, particularly historical data. As blockchain technology becomes more integral to decentralized systems and applications, this data is crucial for various use cases such as token balance tracking, portfolio management, compliance, and auditing.
+Histori is a tribute to the blockchain industry, honoring the impact and potential of decentralized technology by addressing a core need in the ecosystem: easily accessible, historical blockchain data. As the blockchain industry matures, historical data becomes increasingly valuable for auditing, research, financial analysis, and compliance purposes. Histori positions itself as a critical tool for developers and enterprises who require reliable access to this data.
 
-### **Key Pain Points:**
+## My Role as Founder
 
-1. **Running Costly Archival Nodes**:
-    - To access historical blockchain data, one common solution is to run a fully-synced **archival node**, which requires **terabytes of storage** (4-12 TB depending on the network) and takes **multiple days** or weeks to synchronize. This approach is technically demanding, time-consuming, and expensive, especially for businesses needing reliable, up-to-date data across multiple blockchain networks.
-2. **Navigating Public Blockchain Services**:
-    - While some public services provide blockchain data, they often impose significant limitations, including rate limits, unreliable uptime, and inconsistent query performance. These services can become costly as usage scales, with unpredictable response times and incomplete data coverage.
-3. **Building Custom Scrapers**:
-    - Crafting custom scripts to scrape blockchain data is another common solution. However, building these scrapers involves writing and maintaining complex code to fetch, parse, and store data. This approach often leads to **inconsistent results**, breaks during blockchain updates, and high operational overhead in terms of both development and infrastructure.
-4. **Inability to Efficiently Access Historical Data**:
-    - Questions like "What was my client’s token balance at block Y?" are critical for portfolio managers, traders, wallet providers, and DeFi projects, but they are **challenging to answer at scale**. Historical data is often scattered, incomplete, or difficult to retrieve efficiently across multiple blockchain networks. Traditional methods of querying this data are inefficient, particularly when dealing with large datasets.
+As the Founder of Histori, I led the project from concept to launch, steering both its strategic direction and technical implementation. My involvement encompassed a wide range of responsibilities:
 
-### **Impact on Developers and Businesses**:
+1. **Product Vision and Architecture**  
+   At the outset, I defined the vision for Histori, identifying the need for accessible blockchain data as a key driver in our solution. My role involved architecting the platform to support multiple blockchain networks, focusing on scalability, reliability, and user-friendly integration. This vision informed every part of the project, from backend development to tokenomics, ensuring Histori would serve as a versatile, high-performance solution for users in the blockchain space.
 
-These challenges slow down development in the Web3 space, making it difficult for developers to build decentralized applications (dApps) that require historical blockchain data. The high cost, complexity, and unreliability of current solutions deter businesses from scaling or fully realizing the potential of blockchain technology. For blockchain adoption to accelerate, there needs to be a solution that makes accessing historical data fast, affordable, and reliable.
+2. **Tokenomics and Smart Contract Design**  
+   To create value and incentivize adoption, I designed and developed the Histori (HST) ERC20 token. The HST token is governed by a 2% annual inflation model, ensuring the total supply reaches 10 million over a decade. I incorporated mechanisms for token deposits, enabling users to commit tokens without allowing withdrawals, thereby aligning incentives with data access. Additionally, I structured token allocations to reward early adopters and structured an ICO plan to fund future development.
 
----
+3. **API Gateway and AWS Infrastructure**  
+   Histori relies on a robust AWS-based infrastructure to deliver seamless access and efficient request management. I configured AWS API Gateway to handle complex request flows, enabling features such as path parameters for specifying networks, custom domain setup, and flexible API key management for tracking usage. This approach provided a scalable infrastructure capable of handling high request volumes while maintaining security and access control.
 
-## **Solution: How Histori Solves the Problem**
+4. **Backend Development with NestJS**  
+   I led the development of Histori’s backend service using NestJS, integrating several essential features to deliver reliable service. This included calls to external APIs to fetch live ETH prices and HST-to-ETH prices, allowing our service to calculate the USD price of HST tokens dynamically. I also implemented balance and tier management, using a TypeORM entity to track user balances and automate tier assignments based on predefined thresholds. Furthermore, I developed the service to use a user entity based on the `web3Address` field, creating new users via the `authService` if they didn't exist, and associating API keys with subscription plans.
 
-At **Histori**, we are addressing these challenges by offering a **RESTful API** that provides developers with **fast**, **reliable**, and **affordable** access to historical blockchain data without the need to manage costly infrastructure or write custom scraping code.
+5. **Event Processing and Security**  
+   Histori’s platform includes event-driven processing to handle user deposits and staking activities. I implemented an event-processing framework that waits 10 minutes after deposit events, fetches event details again, and then processes the event. Additionally, I incorporated reorg protection by waiting for 50 confirmations before processing transactions, using the latest version of ethers.js. This setup ensures transaction integrity and addresses potential blockchain reorganization risks.
 
-### **How Histori Achieves This:**
+6. **User Tier and Subscription Management**  
+   To manage user tiers and subscription statuses, I implemented a cron job to handle daily tier demotion, ensuring users are automatically downgraded if their subscription lapses. Additionally, I developed a mapping system for tier assignments based on user balances, including a property that indicates when the current subscription ends. This tier structure helps users access data at levels proportional to their subscription while maintaining a smooth and automated user experience.
 
-1. **Efficient Access to Historical Data**:
-    - Histori allows developers to effortlessly query historical data such as token balances, approvals, allowances, and contract details at specific blocks. Whether it's fetching an ERC20 token balance at a specific block height or querying a list of token holders at a given moment, developers can achieve this with simple API calls. This reduces the complexity of interacting with blockchain nodes directly and eliminates the need for large-scale infrastructure.
-2. **Seamless Integration via API**:
-    - Instead of running and maintaining a full archival node, developers can use the **Histori API** to request the data they need. By modifying parameters like `network_name` or `block_number` in the API URL, users can instantly fetch data from different blockchain networks without any extra overhead. This reduces the technical burden of building and maintaining custom infrastructure.
-    - Example API call:
-        
-        ```bash
-        https://api.histori.xyz/v1/eth-mainnet/tokens?token_type=erc20
-        
-        ```
-2. **Affordability and Accessibility**:
-    - With a pricing structure that ranges from a **free trial** to higher-tier plans (Starter, Growth, Business, and Enterprise), **Histori** ensures that developers of all sizes—from individual projects to large enterprises—can access historical blockchain data without breaking the bank. The platform offers competitive pricing, which makes it far more cost-effective than maintaining private nodes or using traditional data providers with unpredictable costs.
-3. **Standardized Request and Response Formats**:
-    - The Histori API provides standardized data formats that are easy to work with, allowing developers to integrate blockchain data into their applications with minimal effort. This standardization reduces the complexity of dealing with raw blockchain data and ensures consistent responses, regardless of the network being queried.
-4. **Reduced Setup Time**:
-    - Instead of waiting days or weeks for a node to sync, developers can instantly access historical data via API. This dramatically shortens the time to market for projects that need to integrate blockchain data and allows businesses to move faster without the bottlenecks caused by traditional methods.
+7. **Customer Onboarding and Airdrop Eligibility**  
+   To streamline user onboarding and promote adoption, I designed a private QR code scan URL for onboarding users directly into our airdrop eligibility flow. This approach allows users to join with minimal setup by simply scanning the code, entering a signature validation flow, and linking their wallet. This system enables users to be eligible for airdrops without additional code or manual verification, making the onboarding experience faster and more user-friendly.
 
-### **Use Cases for the Histori API**:
+8. **Marketing and Industry Positioning**  
+   Throughout Histori's development, I worked to position the platform within the blockchain industry as a valuable resource for developers, researchers, and organizations. Our focus on delivering historical blockchain data is both timely and essential as the industry grows and data becomes more critical. By designing Histori as a tribute to the blockchain industry, I underscored our dedication to decentralization, transparency, and data accessibility.
 
-1. **Portfolio Managers**:
-    - Easily fetch historical token balances and transactions at specific block heights to track portfolio performance or conduct audits.
-2. **Wallet Providers**:
-    - Provide users with real-time historical data on their token holdings, approvals, and allowances without requiring expensive infrastructure.
-3. **DeFi Projects**:
-    - Retrieve token transfer and balance data at specific points in time to power decentralized finance applications, perform analytics, or audit smart contracts.
-4. **Blockchain Analytics**:
-    - Leverage historical blockchain data to build powerful analytical tools, dashboards, and reports that offer insights into token flows, holder distributions, and on-chain activity.
+## Conclusion
 
----
-
-### **Conclusion**
-
-By removing the barriers of accessing reliable blockchain data, **Histori** empowers developers to focus on what matters most—building and innovating. Whether it’s querying token balances, accessing historical data, or managing complex multi-network operations, **Histori** provides a fast, scalable, and cost-effective solution to one of the biggest challenges in blockchain development today.
-
-With **Histori**, developers can spend less time worrying about infrastructure and more time creating the decentralized systems that will drive the future of Web3.
-
+In leading Histori, I developed an end-to-end solution that simplifies access to historical blockchain data, aligning our product with the industry's growing need for reliable and scalable data solutions. From infrastructure and tokenomics to onboarding and event processing, I ensured that Histori’s architecture, features, and user experience align with our mission to make blockchain data accessible, practical, and user-friendly for a broad range of users and applications.
