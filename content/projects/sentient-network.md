@@ -1,5 +1,5 @@
 ---
-title: Astra Protocol
+title: Sentient Network
 type: page
 ---
 

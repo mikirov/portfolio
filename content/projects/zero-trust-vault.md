@@ -1,3 +1,8 @@
+---
+title: ZeroTrustVault Integration Project
+type: page
+---
+
 # ZeroTrustVault Integration Project
 
 ## Overview
