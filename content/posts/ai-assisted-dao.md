@@ -1,6 +1,6 @@
 ---
 title: "SynergiDAO: Where AI-Driven Ethics Meet Transparent Governance"
-date: 2025-01-4T23:39:49+02:00
+date: 2025-01-04T23:39:49+02:00
 description: "SynergiDAO unites AI as a ‘value guardian’ with blockchain-based voting to keep every organizational proposal aligned with shared principles—empowering true, trust-based collaboration."
 # image: "/static/images/avatar.jpg"
 type: "post"
